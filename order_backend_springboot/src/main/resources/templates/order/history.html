@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/head"></head>
+<body>
+  <div class="layui-container">
+    历史订单
+    <table class="layui-table">
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>订单编号</th>
+          <th>座位号</th>
+          <th>总金额</th>
+          <th>订单状态</th>
+          <th>支付状态</th>
+          <th>创建时间</th>
+          <th colspan="2">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="orderDTO : ${orderDtoPage.getContent()}">
+          <td th:text="${orderDTO.orderNo}"></td>
+          <td th:text="${orderDTO.seatId}"></td>
+          <td th:text="${orderDTO.amount}"></td>
+          <td th:text="${orderDTO.getStatusEnum().statusText}"></td>
+          <td th:text="${orderDTO.getPayStatusEnum().statusText}"></td>
+          <td th:text="${orderDTO.createTime}"></td>
+          <td><a href="/sell/seller/order/detail?orderId=${orderDTO.orderId}">详情</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="page" class="page"></div>
+  </div>
+  <script>
+    layui.use(['element', 'laypage'], function() {
+      var laypage = layui.laypage;
+
+      laypage.render({
+        elem: "page",
+        count: "$(orderDtoPage.getTotals())"
+      })
+    })
+  </script>
+</body>
+</html>

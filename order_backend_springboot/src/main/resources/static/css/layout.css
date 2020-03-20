@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+.layout-container {
+  height: 100%;
+}
+.layout-container.layout-container-unfold .layout-sidebar {
+  width: 200px;
+}
+.layout-container.layout-container-unfold .layout-body {
+  margin-left: 200px;
+}
+.layout-container.layout-container-fold .layout-sidebar {
+  width: 60px;
+}
+.layout-container.layout-container-fold .layout-body {
+  margin-left: 60px;
+}
+.layout-container .layout-sidebar {
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 50px;
+  transition: width 0.6s ease;
+}
+.layout-container .layout-sidebar .layout-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  background-color: #1e9fff;
+}
+.layout-container .layout-sidebar .layui-nav {
+  min-height: 100%;
+}
+.layout-container .layout-body {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 90px;
+  transition: width 0.6s ease;
+  background-color: #f9fbff;
+}
+.layout-container .layout-body .layout-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.layout-container .layout-body .layout-header .layout-nav-line {
+  position: relative;
+  height: 50px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.layout-container .layout-body .layout-header .layout-nav-line .layout-nav-left,
+.layout-container .layout-body .layout-header .layout-nav-line .layout-nav-right {
+  position: absolute;
+}
+.layout-container .layout-body .layout-header .layout-nav-line .layout-nav-left .layout-nav .layout-nav-item,
+.layout-container .layout-body .layout-header .layout-nav-line .layout-nav-right .layout-nav .layout-nav-item {
+  display: inline-block;
+  min-width: 20px;
+  height: 50px;
+  padding: 0 15px;
+  line-height: 50px;
+  text-align: center;
+}
+.layout-container .layout-body .layout-header .layout-nav-line .layout-nav-left {
+  left: 15px;
+}
+.layout-container .layout-body .layout-header .layout-nav-line .layout-nav-right {
+  right: 15px;
+}
+.layout-container .layout-body .layout-header .layout-tabs {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+}
+.layout-container .layout-body .layout-header .layout-tabs .layout-tabs-btn {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.layout-container .layout-body .layout-header .layout-tabs .layout-tabs-btn.active {
+  background-color: #eee;
+}
+.layout-container .layout-body .layout-header .layout-tabs .layout-tabs-group-wrap {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+  border-bottom: 1px solid #f0f0f0;
+}
+.layout-container .layout-body .layout-header .layout-tabs .layout-tabs-group-wrap .layout-tabs-group {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.layout-container .layout-body .layout-header .layout-tabs .layout-tabs-group-wrap .layout-tabs-group .layout-tabs-item {
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  max-width: 200px;
+  min-width: 100px;
+  height: 100%;
+  padding-right: 50px;
+  padding-left: 20px;
+  border: 1px solid #f0f0f0;
+  background-color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.layout-container .layout-body .layout-header .layout-tabs .layout-tabs-group-wrap .layout-tabs-group .layout-tabs-item.active {
+  background-color: #eee;
+}
+.layout-container .layout-body .layout-header .layout-tabs .layout-tabs-group-wrap .layout-tabs-group .layout-tabs-item .page-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+}
+.layout-container .layout-body .layout-header .layout-tabs .layout-tabs-group-wrap .layout-tabs-group .layout-tabs-item .page-close-btn:hover {
+  opacity: 0.6;
+}
+.layout-container .layout-body .layout-page-wrap {
+  width: 100%;
+  height: 100%;
+}
+.layout-container .layout-body .layout-page-wrap iframe {
+  width: 100%;
+  height: 100%;
+}

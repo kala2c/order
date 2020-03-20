@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/head"><title></title></head>
+<body>
+  <div class="layui-container">
+    <div class="layui-form">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">分类</label>
+          <select name="categoryId">
+            <option value="0">全部</option>
+            <optgroup th:each="category : ${categoryList}">
+              <option th:attr="value=category.id" th:text="${category.name}"></option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label">状态</label>
+          <select name="status">
+            <option value="-1">全部</option>
+            <optgroup th:each="status : ${statusMap}">
+              <option th:attr="value=status.key" th:text="${status.value}"></option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+    </div>
+    <table class="layui-table">
+      <!-- <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup> -->
+      <thead>
+        <tr>
+          <th>商品名称</th>
+          <th>商品介绍</th>
+          <th>商品金额</th>
+          <th>所属分类</th>
+          <th>商品状态</th>
+          <th>创建时间</th>
+          <th colspan="2">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="goods : ${goodsDtoPage.getContent()}">
+          <td th:text="${goods.name}"></td>
+          <td th:text="${goods.description}"></td>
+          <td th:text="${goods.price}"></td>
+          <td th:text="${goods.category.name}"></td>
+          <td th:text="${goods.getStatusEnum().statusText}"></td>
+          <td th:text="${goods.createTime}"></td>
+          <td><a href="/admin/api/goods/edit?orderId=${goods.id}">修改</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="page" class="page"></div>
+  </div>
+  <script>
+    layui.use(['element', 'form','layer', 'jquery', 'tool', 'laypage'], function() {
+      laypage.render({
+        elem: "page",
+        count: "[[${goodsDtoPage.getTotalElements()}]]"
+      })
+    });
+  </script>
+</body>
+</html>

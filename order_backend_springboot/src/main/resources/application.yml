@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: xs-order
+  thymeleaf:
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+#      additional-paths: src/main/java, resources/static/**, resources/templates/**
+      additional-paths: src/main/java, resources/static, resources/templates
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/order?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#logging:
+#  pattern:
+#    console: "%d - %msg %n"
+#  path: /Users/clw/dev/log/order
+
