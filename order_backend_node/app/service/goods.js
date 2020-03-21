@@ -10,10 +10,10 @@ class GoodsService extends Service {
 
     const temp = {};
     goods.forEach(item => {
-      if (temp[item.category_id] !== undefined) {
-        temp[item.category_id].push(item);
+      if (temp[item.categoryId] !== undefined) {
+        temp[item.categoryId].push(item);
       } else {
-        temp[item.category_id] = [ item ];
+        temp[item.categoryId] = [ item ];
       }
     });
     const category = await ctx.model.Category.findAll({

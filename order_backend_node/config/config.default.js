@@ -25,6 +25,7 @@ module.exports = appInfo => {
     username: 'root',
     password: 'root',
     database: 'order',
+    underscored: true,
   };
   // add your user config here
   const userConfig = {

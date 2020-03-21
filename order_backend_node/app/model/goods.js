@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = app => {
-  const { STRING, INTEGER, DECIMAL} = app.Sequelize;
+  const { STRING, INTEGER, DECIMAL } = app.Sequelize;
   return app.model.define('goods', {
     id: { type: INTEGER, primaryKey: true, autoIncrement: true },
     name: STRING,
@@ -10,7 +10,7 @@ module.exports = app => {
     stock: INTEGER,
     price: DECIMAL,
     weight: INTEGER,
-    category_id: INTEGER,
+    categoryId: INTEGER,
     status: INTEGER,
     del: INTEGER,
   });

@@ -10,6 +10,6 @@ module.exports = options => {
     ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     if (request.method === 'OPTIONS') {
       ctx.status = 200;
-    } 
+    }
   };
 };

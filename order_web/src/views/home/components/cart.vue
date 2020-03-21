@@ -21,7 +21,9 @@
     <div class="list-wrap" :class="{show: cartShow}">
       <div class="list-header">
         <span class="title">购物车</span>
-        <span class="close" @click="closeCart">&times;</span>
+        <span class="close" @click="closeCart">
+          <van-icon name="arrow-down" />
+        </span>
       </div>
       <div v-if="!cartGoodsList.length" class="empty">空空如也</div>
       <div v-else class="list-group">
